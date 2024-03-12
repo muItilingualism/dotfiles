@@ -141,7 +141,3 @@ alias youtube-dl='/usr/local/bin/youtube-dl'
 
 # Created by `pipx` on 2024-01-12 22:50:34
 export PATH="$PATH:/home/yaboi/.local/bin"
-
-# nvim
-alias nvim='~/Software/nvim/nvim.appimage'
-
