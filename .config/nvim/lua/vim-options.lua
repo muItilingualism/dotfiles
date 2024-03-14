@@ -1,3 +1,6 @@
+-- enable nerd font
+vim.g.have_nerd_font = true
+
 -- force 4 spaces for indents
 vim.cmd("set expandtab")
 vim.cmd("set tabstop=4")
