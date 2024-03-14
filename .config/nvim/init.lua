@@ -1,12 +1,3 @@
--- force 4 spaces for indents
-vim.cmd("set expandtab")
-vim.cmd("set tabstop=4")
-vim.cmd("set softtabstop=4")
-vim.cmd("set shiftwidth=4")
-vim.g.mapleader = " "
-
--- one clipboard to rule them all
-vim.cmd("set clipboard+=unnamedplus")
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
@@ -22,4 +13,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local opts = {}
+
+require("vim-options")
+require("vim-bindings")
 require("lazy").setup("plugins")
