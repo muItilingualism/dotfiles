@@ -30,3 +30,6 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 
 -- paste without overwriting register
 vim.keymap.set("x", "<leader>p", [["_dP]])
+
+-- delete without overwriting register
+vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
