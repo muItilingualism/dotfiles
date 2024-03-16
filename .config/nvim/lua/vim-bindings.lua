@@ -27,3 +27,6 @@ vim.keymap.set("n", "J", "mzJ`z")
 -- center cursor when moving with C-d and C-u
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
+
+-- paste without overwriting register
+vim.keymap.set("x", "<leader>p", [["_dP]])
