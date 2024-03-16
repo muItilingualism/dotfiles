@@ -16,6 +16,12 @@ sudo apt install git
 sudo apt install stow
 ```
 
+### Nerd font
+
+Install from [here](https://github.com/ryanoasis/nerd-fonts/releases)
+
+(like JetBrainsMono)
+
 ## Installation
 
 Clone the repository in the `$HOME` directory,
