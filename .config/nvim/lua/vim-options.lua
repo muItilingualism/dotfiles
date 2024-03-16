@@ -17,7 +17,6 @@ vim.cmd("set clipboard+=unnamedplus")
 vim.opt.guicursor = ""
 
 -- relative line numbers
-vim.opt.nu = true
 vim.opt.relativenumber = true
 
 -- show line numbers
