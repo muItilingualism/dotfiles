@@ -1,5 +1,5 @@
 -- open netrw for file nav
-vim.keymap.set("n", "<leader>pv", ":Ex<CR>", {})
+vim.keymap.set("n", "<leader>pv", ":Neotree position=current<CR>", {})
 
 -- force hjkl instead of arrows
 vim.keymap.set("n", "<left>", '<cmd>echo "Use h to move!!"<CR>')
