@@ -33,3 +33,11 @@ vim.keymap.set("x", "<leader>p", [["_dP]])
 
 -- delete without overwriting register
 vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
+
+-- make current file executeable
+vim.keymap.set(
+	"n",
+	"<leader>x",
+	"<cmd>!chmod +x %<CR>",
+	{ silent = true, desc = "Make E[x]ecutable" }
+)
