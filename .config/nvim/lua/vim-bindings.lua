@@ -20,3 +20,6 @@ vim.keymap.set("i", "<C-j>", "<down>")
 -- move highlighted lines
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+
+-- move line below to current line without moving cursor
+vim.keymap.set("n", "J", "mzJ`z")
