@@ -30,9 +30,24 @@ return {
 				capabilities = capabilities,
 			})
 
-			vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "Display hover information" })
-			vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "[G]oto [D]efinition" })
-			vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, { desc = "[C]ode [A]ction" })
+			vim.keymap.set(
+				"n",
+				"K",
+				vim.lsp.buf.hover,
+				{ desc = "Display hover information" }
+			)
+			vim.keymap.set(
+				"n",
+				"gd",
+				vim.lsp.buf.definition,
+				{ desc = "[G]oto [D]efinition" }
+			)
+			vim.keymap.set(
+				{ "n", "v" },
+				"<leader>ca",
+				vim.lsp.buf.code_action,
+				{ desc = "[C]ode [A]ction" }
+			)
 		end,
 	},
 }
