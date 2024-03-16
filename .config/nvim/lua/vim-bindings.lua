@@ -23,3 +23,7 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
 -- move line below to current line without moving cursor
 vim.keymap.set("n", "J", "mzJ`z")
+
+-- center cursor when moving with C-d and C-u
+vim.keymap.set("n", "<C-d>", "<C-d>zz")
+vim.keymap.set("n", "<C-u>", "<C-u>zz")
