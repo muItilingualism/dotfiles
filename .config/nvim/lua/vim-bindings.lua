@@ -36,8 +36,8 @@ vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 
 -- make current file executeable
 vim.keymap.set(
-	"n",
-	"<leader>x",
-	"<cmd>!chmod +x %<CR>",
-	{ silent = true, desc = "Make E[x]ecutable" }
+    "n",
+    "<leader>x",
+    "<cmd>!chmod +x %<CR>",
+    { silent = true, desc = "Make E[x]ecutable" }
 )
