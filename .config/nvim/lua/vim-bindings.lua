@@ -16,3 +16,7 @@ vim.keymap.set("i", "<C-h>", "<left>")
 vim.keymap.set("i", "<C-l>", "<right>")
 vim.keymap.set("i", "<C-k>", "<up>")
 vim.keymap.set("i", "<C-j>", "<down>")
+
+-- move highlighted lines
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
