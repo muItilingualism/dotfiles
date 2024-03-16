@@ -3,6 +3,8 @@ return {
 	event = { "CursorMoved", "WinScrolled" },
 	opts = {},
 	config = function()
-		require("scrollEOF").setup({})
+		require("scrollEOF").setup({
+			insert_mode = true,
+		})
 	end,
 }
