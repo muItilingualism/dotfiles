@@ -2,7 +2,7 @@
 vim.keymap.set(
     "n",
     "<leader>pv",
-    ":Neotree position=current<CR>",
+    ":Neotree position=current reveal<CR>",
     { desc = "Open Neotree" }
 )
 
