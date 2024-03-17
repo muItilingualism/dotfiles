@@ -2,7 +2,7 @@
 
 This directory contains dotfiles
 
-## Ensure you have the following isntalled on your system,
+## Ensure you have the following installed on your system,
 
 ### Git
 
