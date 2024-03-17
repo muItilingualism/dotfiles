@@ -7,20 +7,40 @@ vim.keymap.set(
 )
 
 -- force hjkl instead of arrows
-vim.keymap.set("n", "<left>", '<cmd>echo "Use h to move!!"<CR>')
-vim.keymap.set("n", "<right>", '<cmd>echo "Use l to move!!"<CR>')
-vim.keymap.set("n", "<up>", '<cmd>echo "Use k to move!!"<CR>')
-vim.keymap.set("n", "<down>", '<cmd>echo "Use j to move!!"<CR>')
+vim.keymap.set(
+    "n",
+    "<left>",
+    '<cmd>echo "Use h to move!!"<CR>',
+    { desc = "which_key_ignore" }
+)
+vim.keymap.set(
+    "n",
+    "<right>",
+    '<cmd>echo "Use l to move!!"<CR>',
+    { desc = "which_key_ignore" }
+)
+vim.keymap.set(
+    "n",
+    "<up>",
+    '<cmd>echo "Use k to move!!"<CR>',
+    { desc = "which_key_ignore" }
+)
+vim.keymap.set(
+    "n",
+    "<down>",
+    '<cmd>echo "Use j to move!!"<CR>',
+    { desc = "which_key_ignore" }
+)
 
-vim.keymap.set("i", "<left>", "<Nop>")
-vim.keymap.set("i", "<right>", "<Nop>")
-vim.keymap.set("i", "<up>", "<Nop>")
-vim.keymap.set("i", "<down>", "<Nop>")
+vim.keymap.set("i", "<left>", "<Nop>", { desc = "which_key_ignore" })
+vim.keymap.set("i", "<right>", "<Nop>", { desc = "which_key_ignore" })
+vim.keymap.set("i", "<up>", "<Nop>", { desc = "which_key_ignore" })
+vim.keymap.set("i", "<down>", "<Nop>", { desc = "which_key_ignore" })
 
-vim.keymap.set("i", "<C-h>", "<left>", { desc = "Move cursor left" })
-vim.keymap.set("i", "<C-l>", "<right>", { desc = "Move cursor right" })
-vim.keymap.set("i", "<C-k>", "<up>", { desc = "Move cursor up" })
-vim.keymap.set("i", "<C-j>", "<down>", { desc = "Move cursor down" })
+vim.keymap.set("i", "<C-h>", "<left>", { desc = "Left" })
+vim.keymap.set("i", "<C-l>", "<right>", { desc = "Right" })
+vim.keymap.set("i", "<C-k>", "<up>", { desc = "Up" })
+vim.keymap.set("i", "<C-j>", "<down>", { desc = "Down" })
 
 -- move highlighted lines
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move whole line down" })
