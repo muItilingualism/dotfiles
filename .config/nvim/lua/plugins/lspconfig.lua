@@ -17,26 +17,19 @@ return {
         "neovim/nvim-lspconfig",
         lazy = false,
         config = function()
-            local capabilities = require("cmp_nvim_lsp").default_capabilities()
             local lspconfig = require("lspconfig")
 
-            lspconfig.lua_ls.setup({
-                capabilities = capabilities,
-            })
-            lspconfig.tsserver.setup({
-                capabilities = capabilities,
-            })
-            lspconfig.html.setup({
-                capabilities = capabilities,
-            })
+            lspconfig.lua_ls.setup({})
+            lspconfig.tsserver.setup({})
+            lspconfig.html.setup({})
 
             vim.api.nvim_create_autocmd("LspAttach", {
-                group = vim.api.nvim_create_augroup(
-                    "kickstart-lsp-attach",
-                    { clear = true }
-                ),
+                group = vim.api.nvim_create_augroup("UserLspConfig", {}),
                 callback = function(event)
-                    local map = function(keys, func, desc)
+                    -- Enable completion triggered by <c-x><c-o>
+                    vim.bo[event.buf].omnifunc = "v:lua.vim.lsp.omnifunc"
+
+                    local mapn = function(keys, func, desc)
                         vim.keymap.set(
                             "n",
                             keys,
@@ -45,54 +38,63 @@ return {
                         )
                     end
 
-                    map(
+                    local mapnv = function(keys, func, desc)
+                        vim.keymap.set(
+                            { "n", "v" },
+                            keys,
+                            func,
+                            { buffer = event.buf, desc = "LSP: " .. desc }
+                        )
+                    end
+
+                    mapn(
                         "gd",
                         require("telescope.builtin").lsp_definitions,
                         "[G]oto [D]efinition"
                     )
 
-                    map(
+                    mapn(
                         "gr",
                         require("telescope.builtin").lsp_references,
                         "[G]oto [R]eferences"
                     )
 
-                    map(
+                    mapn(
                         "gI",
                         require("telescope.builtin").lsp_implementations,
                         "[G]oto [I]mplementation"
                     )
 
-                    map(
+                    mapn(
                         "<leader>gt",
                         require("telescope.builtin").lsp_type_definitions,
                         "[G]oto [T]ype"
                     )
 
-                    map(
+                    mapn(
                         "<leader>ds",
                         require("telescope.builtin").lsp_document_symbols,
                         "[D]ocument [S]ymbols"
                     )
 
-                    map(
+                    mapn(
                         "<leader>ws",
                         require("telescope.builtin").lsp_dynamic_workspace_symbols,
                         "[W]orkspace [S]ymbols"
                     )
 
-                    map("<leader>rn", vim.lsp.buf.rename, "[R]e[n]ame")
+                    mapn("<leader>rn", vim.lsp.buf.rename, "[R]e[n]ame")
 
-                    map(
+                    mapnv(
                         "<leader>ca",
                         vim.lsp.buf.code_action,
                         "[C]ode [A]ction"
                     )
 
-                    map("K", vim.lsp.buf.hover, "Hover Documentation")
+                    mapn("K", vim.lsp.buf.hover, "Hover Documentation")
 
                     --  for example, in C this would take you to the header
-                    map("gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
+                    mapn("gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
 
                     -- see `:help CursorHold` for information about when this is executed
                     local client =
