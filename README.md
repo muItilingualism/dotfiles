@@ -1,4 +1,6 @@
+# ARCHIVED: as I have switched most of my configuration to NixOS with home-manager
 # Dotfiles
+
 
 This directory contains dotfiles
 
